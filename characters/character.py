@@ -13,5 +13,5 @@ class Character:
             damage = 0
 
         target.hp = target.hp - damage
-
+        
         print(self.name, "attaque", target.name, "avec", self.weapon.name)

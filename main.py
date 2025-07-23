@@ -2,6 +2,7 @@
 
 from gears.Weapon import Weapon
 from gears.Armor import Armor
+from characters.character import Character
 
 # Création des armures 
 
