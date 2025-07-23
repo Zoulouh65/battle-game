@@ -34,3 +34,15 @@ barbarian = Character("Conan", 100, axe, heavy_armor)
 # Magicien
 
 wizard = Character("Merlin", 80, wand, robe)
+
+# Début du combat
+
+print("Début du combat !")
+
+barbarian.attack(wizard)
+
+print(f"{wizard.name} a {wizard.hp} HP restants.")
+
+wizard.attack(barbarian)
+
+print(f"{barbarian.name} a {barbarian.hp} HP restants.")
