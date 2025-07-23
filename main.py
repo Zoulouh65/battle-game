@@ -35,14 +35,23 @@ barbarian = Character("Conan", 100, axe, heavy_armor)
 
 wizard = Character("Merlin", 80, wand, robe)
 
-# Début du combat
+# Variable de départ
 
-print("Début du combat !")
+fight_beginning = 0
 
-barbarian.attack(wizard)
+# Interface utilisateur
+User_choice = str(input('Bienvenue dans ce RPG !\nVoulez-vous commencer le combat ?'))
 
-print(f"{wizard.name} a {wizard.hp} HP restants.")
+if User_choice == 'oui':
+    fight_beginning = 1
+    print("Début du combat !")
+else:
+    fight_beginning =0
 
-wizard.attack(barbarian)
+while (fight_beginning == 1) and (wizard.hp > 0) and (barbarian.hp > 0):
+    barbarian.attack(wizard)
+    print(f"{wizard.name} a {wizard.hp} HP restants.")
+    wizard.attack(barbarian)
+    print(f"{barbarian.name} a {barbarian.hp} HP restants.")
 
-print(f"{barbarian.name} a {barbarian.hp} HP restants.")
+print("Fin du combat")
