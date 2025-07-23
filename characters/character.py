@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # classe de base pour tous les personnages
 class Character:
-    def __init__(self, name, hp, weapon, armor):
+    def init(self, name, hp, weapon, armor):
         self.name = name
         self.hp = hp
         self.weapon = weapon
@@ -12,16 +11,7 @@ class Character:
         damage = self.weapon.damage - target.armor.defense
         if damage < 0:
             damage = 0
-        
+
         target.hp = target.hp - damage
 
         print(self.name, "attaque", target.name, "avec", self.weapon.name)
-=======
-# Classe de base pour les personnages
-
-class Character:
-    def __init__(self, name, hp, weapon, armor):
-        self.name = name        # Nom du personnage
-        self.hp = hp            # Santé du personnage
-        self.weapon = weapon    
->>>>>>> 7d57eabe01e98d42079579a412c61eeda18900ae
