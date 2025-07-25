@@ -3,7 +3,7 @@
 from characters.Wizard import Wizard
 from gears.Weapon import Weapon
 from gears.Armor import Armor
-from gears.Spells import Spells
+from gears.Spell import Spell
 from characters.character import Character
 from characters.Barbarian import Barbarian
 from characters.Wizard import Wizard
@@ -26,8 +26,11 @@ axe = Weapon("Axe", 10)
 
 # Baguette magique
 
-wand = Weapon("Magic Wand", 20)
+wand = Weapon("Magic Wand", 1)
 
+# Spells
+
+fireball = Spell("Fireball",19,5)
 
 # Création des personnages
 
@@ -37,7 +40,7 @@ barbarian = Barbarian("Conan", 100, axe, heavy_armor)
 
 # Magicien
 
-wizard = Wizard("Merlin", 80, wand, robe)
+wizard = Wizard("Merlin", 80, wand, robe, 100, fireball)
 
 # Variable de départ
 

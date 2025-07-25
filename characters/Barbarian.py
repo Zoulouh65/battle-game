@@ -3,7 +3,7 @@ from characters.character import Character
 
 class Barbarian(Character):
     def __init__(self, name:str, hp:int, Weapon:str, Armor:str):
-        Character.__init__(name, hp, Weapon, Armor)
+        Character.__init__(self,name, hp, Weapon, Armor)
 
     def attack(self, target):
         for i in range(0,1) :

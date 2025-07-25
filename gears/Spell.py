@@ -1,6 +1,6 @@
 # Définittion des spells
 
-class Spells:
+class Spell:
     def __init__(self, name:str, damage:int, mana_cost:int):
         self.name = name            # nom du spell
         self.damage = damage        # dégâts du spell
