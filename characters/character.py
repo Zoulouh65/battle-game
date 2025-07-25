@@ -19,4 +19,9 @@ class Character:
 class Barbarian(Character):
     def __init__(self, name, hp, Weapon, Armor):
         Character.__init__(name, hp, Weapon, Armor)
+
+
+class Wizard(Character):
+    def __init__(self, name, hp, Weapon, Armor, Mana, Spells):
+        Character.__init__(name, hp, Weapon, Armor, Mana, Spells)
     
