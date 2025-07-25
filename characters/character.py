@@ -8,10 +8,8 @@ class Character:
 
 # attaquer un autre personnage
     def attack(self, target):
-        damage = self.Weapon.damage - target.Armor.defense
-        if damage < 0:
-            damage = 0
+        damage = (self.Weapon.damage *(100 - target.Armor.defense))/100
 
         target.hp = target.hp - damage
         
-        print(self.name, "attack", target.name, "with", self.Weapon.name)   
+        print(self.name, "attack", target.name, "with", self.Weapon.name)
