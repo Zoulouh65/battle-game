@@ -1,9 +1,10 @@
 # Zé parti pour se mettre sur la tronche
 
+from characters.Wizard import Wizard
 from gears.Weapon import Weapon
 from gears.Armor import Armor
+from gears.Spells import Spells
 from characters.character import Character
-
 # Création des armures 
 
 # Armure lourde de barbare
