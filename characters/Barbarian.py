@@ -14,4 +14,4 @@ class Barbarian(Character):
 
         target.hp = target.hp - damage
 
-        print(self.name, "attaque", target.name, "avec", self.Weapon.name)
+        print(self.name, "attack", target.name, "with", self.Weapon.name)
