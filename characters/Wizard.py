@@ -2,8 +2,8 @@ from characters.character import Character
 from gears.Spells import Spells  # Classe Spells avec name, damage, mana
 
 class Wizard(Character):
-    def __init__(self, name, hp, weapon, armor, mana, spell):
-        super().__init__(name, hp, weapon, armor)
+    def __init__(self, name:str, hp:int, Weapon:str, Armor:str, mana:int, spell:Spells):
+        super().__init__(name, hp, Weapon, Armor)
         self.mana = mana
         self.spell = spell  # un sort unique
 
