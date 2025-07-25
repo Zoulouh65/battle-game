@@ -6,9 +6,11 @@ class Barbarian(Character):
         Character.__init__(name, hp, Weapon, Armor)
 
     def attack(self, target):
-        damage = 2*(self.Weapon.damage) - target.Armor.defense
-        if damage < 0:
-            damage = 0
+        for i in range(0,1) :
+            damage = (self.Weapon.damage) - target.Armor.defense
+            if damage < 0:
+                damage = 0
+            i += 1
 
         target.hp = target.hp - damage
         
