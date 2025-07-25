@@ -19,11 +19,11 @@ robe = Armor("Tunique de magicien", 5)
 
 # Hache de guerre
 
-axe = Weapon("Hache de guerre", 10)
+axe = Weapon("Axe", 10)
 
 # Baguette magique
 
-wand = Weapon("Baguette magique", 20)
+wand = Weapon("Magic Wand", 20)
 
 
 # Création des personnages
@@ -50,15 +50,23 @@ else:
     fight_beginning =0
 
 while (fight_beginning == 1) and (wizard.hp > 0) and (barbarian.hp > 0):
-    barbarian.attack(wizard)
-    print("Results : ")
-    print(barbarian.name, barbarian.hp, "HP")
-    print(wizard.name, wizard.hp, "HP")
-    input("--------------------")
 
-    wizard.attack(barbarian)
-    print(wizard.name, wizard.hp, "HP")
-    print(barbarian.name, barbarian.hp, "HP")
-    input("--------------------")
+    if barbarian.hp > 0 :
+        barbarian.attack(wizard)
+        print("Results : ")
+        print(barbarian.name, barbarian.hp, "HP")
+        print(wizard.name, wizard.hp, "HP")
+        input("--------------------")
+    else:
+        break
+
+    if wizard.hp > 0:
+        wizard.attack(barbarian)
+        print("Results : ")
+        print(wizard.name, wizard.hp, "HP")
+        print(barbarian.name, barbarian.hp, "HP")
+        input("--------------------")
+    else:
+        break
 
 print("Fin du combat")
