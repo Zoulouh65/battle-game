@@ -5,6 +5,9 @@ from gears.Weapon import Weapon
 from gears.Armor import Armor
 from gears.Spells import Spells
 from characters.character import Character
+from characters.Barbarian import Barbarian
+from characters.Wizard import Wizard
+
 # Création des armures 
 
 # Armure lourde de barbare
@@ -30,11 +33,11 @@ wand = Weapon("Magic Wand", 20)
 
 # Barbare 
 
-barbarian = Character("Conan", 100, axe, heavy_armor)
+barbarian = Barbarian("Conan", 100, axe, heavy_armor)
 
 # Magicien
 
-wizard = Character("Merlin", 80, wand, robe)
+wizard = Wizard("Merlin", 80, wand, robe)
 
 # Variable de départ
 
@@ -47,26 +50,29 @@ if User_choice == 'oui':
     fight_beginning = 1
     print("Début du combat !")
 else:
-    fight_beginning =0
+    fight_beginning = 0
 
 while (fight_beginning == 1) and (wizard.hp > 0) and (barbarian.hp > 0):
 
-    if barbarian.hp > 0 :
-        barbarian.attack(wizard)
-        print("Results : ")
-        print(barbarian.name, barbarian.hp, "HP")
-        print(wizard.name, wizard.hp, "HP")
-        input("--------------------")
-    else:
+    if barbarian.hp <= 0:
         break
 
-    if wizard.hp > 0:
-        wizard.attack(barbarian)
-        print("Results : ")
-        print(wizard.name, wizard.hp, "HP")
-        print(barbarian.name, barbarian.hp, "HP")
-        input("--------------------")
-    else:
+    barbarian.attack(wizard)
+    print("Results : ")
+    print(barbarian.name, barbarian.hp, "HP")
+    print(wizard.name, wizard.hp, "HP")
+    input("--------------------")
+
+    if wizard.hp <= 0:
         break
 
-print("Fin du combat")
+    wizard.attack(barbarian)
+    print("Results : ")
+    print(wizard.name, wizard.hp, "HP")
+    print(barbarian.name, barbarian.hp, "HP")
+    input("--------------------")
+
+if barbarian.hp <= 0:
+    print("Fin du combat le gagnant est Wizard")
+else:
+    print("Fin du combat le gagnant est Barbarian")

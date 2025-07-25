@@ -2,12 +2,12 @@ from characters.character import Character
 from gears.Spells import Spells 
 
 class Wizard(Character):
-    def __init__(self, name, hp, weapon, armor, mana, spell):
-        super().__init__(name, hp, weapon, armor)
+    def __init__(self, name:str, hp:int, weapon:str, armor:str, mana:int, spell:str):
+        Character.__init__(self, name, hp, weapon, armor)
         self.mana = mana
         self.spell = spell  # un sort
 
-    def attack(self, target):
+    def attack(self, target:str):
         print(f"\n{self.name} Mana: {self.mana}")
 
         if self.mana >= self.spell.mana:
@@ -20,7 +20,7 @@ class Wizard(Character):
         else:   
             self.punch(target)
 
-    def punch(self, target):
+    def punch(self, target:str):
         print(f"{self.name} plus de mana et frappe {target.name} à l'aide son sexe !")
         damage = 2 - target.armor.defense  # dégâts de pd 
         damage = max(damage, 0)
