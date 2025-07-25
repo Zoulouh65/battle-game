@@ -50,8 +50,14 @@ else:
 
 while (fight_beginning == 1) and (wizard.hp > 0) and (barbarian.hp > 0):
     barbarian.attack(wizard)
-    print(f"{wizard.name} a {wizard.hp} HP restants.")
+    print("Results : ")
+    print(barbarian.name, barbarian.hp, "HP")
+    print(wizard.name, wizard.hp, "HP")
+    input("--------------------")
+
     wizard.attack(barbarian)
-    print(f"{barbarian.name} a {barbarian.hp} HP restants.")
+    print(wizard.name, wizard.hp, "HP")
+    print(barbarian.name, barbarian.hp, "HP")
+    input("--------------------")
 
 print("Fin du combat")
