@@ -18,12 +18,10 @@ class Wizard(Character):
             self.mana -= self.spell.mana_cost
             print(f"{target.name} takes {damage} damage! ({target.hp} HP left)")
         else:
-            self.punch(target)
-
-    def punch(self, target:str):
-        # Attaque de secours si plus de mana
-        print(f"{self.name} has no mana and punches {target.name}!")
-        damage = 2 - target.armor.defense  # petits dégâts
-        damage = max(damage, 0)
-        target.hp -= damage
-        print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")
+             # Attaque de avec l'arme si plus de mana
+            print(f"{self.name} has no mana and punches {target.name}!")
+            damage = (self.weapon.damage *(100 - target.Armor.defense))/100 
+            damage = max(damage, 0)
+            target.hp -= damage
+            print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")       
+        

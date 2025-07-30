@@ -30,7 +30,7 @@ wand = Weapon("Magic Wand", 1)
 
 # Spells
 
-fireball = Spell("Fireball",19,5)
+fireball = Spell("Fireball",19,15)
 
 # Création des personnages
 
