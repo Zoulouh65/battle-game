@@ -15,3 +15,4 @@ class Barbarian(Character):
         target.hp = target.hp - damage
 
         print(self.name, "attack", target.name, "with", self.Weapon.name)
+        print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")
