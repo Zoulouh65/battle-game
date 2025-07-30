@@ -15,6 +15,7 @@ class Wizard(Character):
             damage = (self.spell.damage *(100 - target.Armor.defense))/100
             damage = max(damage, 0)
             target.hp -= damage
+            round(target.hp)
             self.mana -= self.spell.mana_cost
             if target.hp <= 0 :
                 target.hp = 0
@@ -27,6 +28,7 @@ class Wizard(Character):
             damage = (self.weapon.damage *(100 - target.Armor.defense))/100 
             damage = max(damage, 0)
             target.hp -= damage
+            round(target.hp)
             if target.hp <= 0 :
                 target.hp = 0
                 print(f"{target.name} takes {damage} damage. {target.name} is dead. {target.hp} HP left") 
