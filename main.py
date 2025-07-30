@@ -49,11 +49,19 @@ fight_beginning = 0
 # Interface utilisateur
 User_choice = str(input('Bienvenue dans ce RPG !\nVoulez-vous commencer le combat ?'))
 
+
+while User_choice not in ['oui','non']:
+    User_choice = str(input('S\'il vous plaît, choisissez entre oui et non >>>>>'))
+    fight_beginning = 0
+
+
 if User_choice == 'oui':
     fight_beginning = 1
     print("Début du combat !")
 else:
     fight_beginning = 0
+    print('Au revoir dans ce cas')
+
 
 while (fight_beginning == 1) and (wizard.hp > 0) and (barbarian.hp > 0):
 
@@ -75,7 +83,7 @@ while (fight_beginning == 1) and (wizard.hp > 0) and (barbarian.hp > 0):
     print(barbarian.name, barbarian.hp, "HP")
     input("--------------------")
 
-if barbarian.hp <= 0:
-    print("Fin du combat le gagnant est Wizard")
-else:
-    print("Fin du combat le gagnant est Barbarian")
+    if barbarian.hp <= 0:
+        print("Fin du combat le gagnant est Wizard")
+    else:
+        print("Fin du combat le gagnant est Barbarian")
