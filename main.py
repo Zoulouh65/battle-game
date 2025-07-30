@@ -26,11 +26,11 @@ axe = Weapon("Axe", 10)
 
 # Baguette magique
 
-wand = Weapon("Magic Wand", 1)
+wand = Weapon("Magic Wand", 2)
 
 # Spells
 
-fireball = Spell("Fireball",19,15)
+fireball = Spell("Fireball",20,15)
 
 # Création des personnages
 

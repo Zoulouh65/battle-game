@@ -12,7 +12,8 @@ class Barbarian(Character):
             target.hp = target.hp - damage
             print(self.name, "attack", target.name, "with", self.Weapon.name)
             if target.hp <= 0 :
-                print(f"{target.name} takes {damage} damage. {target.name} is dead. 0 HP left")
+                target.hp = 0
+                print(f"{target.name} takes {damage} damage. {target.name} is dead. {target.hp} HP left")
                 break 
             else:
                 print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")
