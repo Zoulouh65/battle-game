@@ -8,11 +8,12 @@ class Barbarian(Character):
     # attaquer un autre personnage
     def attack(self, target:str):
         for i in range(2) :
-            if target.hp <= 0 :
-                print(f"{target.name} is dead. 0 HP left")
-                break 
             damage = (self.Weapon.damage *(100 - target.Armor.defense))/100
             target.hp = target.hp - damage
             print(self.name, "attack", target.name, "with", self.Weapon.name)
-            print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")
+            if target.hp <= 0 :
+                print(f"{target.name} takes {damage} damage. {target.name} is dead. 0 HP left")
+                break 
+            else:
+                print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")
     
