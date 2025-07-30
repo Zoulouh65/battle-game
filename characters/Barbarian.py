@@ -10,6 +10,7 @@ class Barbarian(Character):
         for i in range(2) :
             damage = (self.Weapon.damage *(100 - target.Armor.defense))/100
             target.hp = target.hp - damage
+            round(target.hp)
             print(self.name, "attack", target.name, "with", self.Weapon.name)
             if target.hp <= 0 :
                 target.hp = 0
