@@ -7,7 +7,9 @@ class Barbarian(Character):
 
     # attaquer un autre personnage
     def attack(self, target:str):
-        damage = (self.Weapon.damage *(100 - target.Armor.defense))/100
-        target.hp = target.hp - damage
-        print(self.name, "attack", target.name, "with", self.Weapon.name)
-        print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")
+        for i in range(2) :
+            damage = (self.Weapon.damage *(100 - target.Armor.defense))/100
+            target.hp = target.hp - damage
+            print(self.name, "attack", target.name, "with", self.Weapon.name)
+            print(f"{target.name} takes {damage} damage. ({target.hp} HP left)")
+    
